@@ -5,15 +5,15 @@ import re
 from time import *
 from crawler import crawler
 
-print localtime()
+print localtime() #Timemessung
 
 cnx = mysql.connector.connect(
                      user = "root",
                      host = "localhost",
                      passwd = "",
-                     db = "reporting")
+                     db = "reporting") #verbindet mit MySQL Server
 
-datei = open("daten.dat","w")
+datei = open("daten.dat","w") #oeffnet Output Datei
 cur = cnx.cursor()
 cur.execute("SELECT * FROM testdata")
 
