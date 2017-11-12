@@ -1,3 +1,3 @@
 # simpleWebCrawlerScriptPython
 
-Simple Python script for searching words in html sites.
+Simple Python script for searching content in html sites.
