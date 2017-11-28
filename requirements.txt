@@ -1,0 +1,9 @@
+sphinx
+unittest
+csv
+json
+tensorflow
+numpy
+pandas
+os
+scipy

@@ -1,0 +1,50 @@
+% allow eps files
+\usepackage{epstopdf}
+\usepackage{epsfig}
+
+% allow lists until depth 9
+\usepackage{enumitem}
+\setlistdepth{9}
+\setcounter{tocdepth}{2}
+
+\setlist[itemize,1]{label=$\bullet$}
+\setlist[itemize,2]{label=$\bullet$}
+\setlist[itemize,3]{label=$\bullet$}
+\setlist[itemize,4]{label=$\bullet$}
+\setlist[itemize,5]{label=$\bullet$}
+\setlist[itemize,6]{label=$\bullet$}
+\setlist[itemize,7]{label=$\bullet$}
+\setlist[itemize,8]{label=$\bullet$}
+\setlist[itemize,9]{label=$\bullet$}
+
+\renewlist{itemize}{itemize}{9}
+
+\usepackage[textwidth=16cm,textheight=22cm]{geometry}
+
+\setlength{\headheight}{60pt}
+\makeatletter
+\makeatother
+
+% Farbdefinition
+%\usepackage{color}
+\usepackage[table]{xcolor} %xcolor wird anstelle von color benoetigt
+\definecolor{blue}{RGB}{56,179,227}
+\definecolor{dark_blue}{RGB}{0, 80, 151}
+
+% Spaltenkopf fuer normale Grid Table
+\let\oldtabulary\tabulary
+\let\oldendtabulary\endtabulary
+\renewenvironment{tabulary}[2]{\rowcolors{0}{}{gray!25}\oldtabulary{#1}{#2}\rowcolor{dark_blue}}{\oldendtabulary}
+
+% Spaltenkopf fuer Longtable
+\let\oldlongtable\longtable
+\let\oldendlongtable\endlongtable
+\renewenvironment{longtable}[1]{\rowcolors{0}{}{gray!25}\oldlongtable{#1}\rowcolor{dark_blue}}{\oldendlongtable}
+
+% Hack um Tabellen Header einzufaerben. fuer Fett stellt Zelle auf Blau
+\let\oldtextsf\textsf
+\renewcommand{\textsf}[1]{\cellcolor{dark_blue}\color{white}\oldtextsf{#1}} %mit \color{white} wird die headerfarbe geaendert
+
+%
+\let\oldDUrole\DUrole
+
